@@ -105,23 +105,13 @@ class _HomeScreenState extends State<HomeScreen> {
         text == "-" ||
         text == "C" ||
         text == "(" ||
-        text == ")") {
-      return Colors.red;
-    }
-    if (text == "=" || text == "AC" || text == ".") {
+        text == ")" ||
+        text == "=" ||
+        text == "AC" ||
+        text == ".") {
       return Colors.red;
     }
     return Colors.black;
-  }
-
-  getBgColor(String text) {
-    if (text == "AC") {
-      return Colors.white;
-    }
-    if (text == "=") {
-      return Colors.white;
-    }
-    return Colors.white;
   }
 
   Widget button(String text) {
@@ -133,15 +123,9 @@ class _HomeScreenState extends State<HomeScreen> {
       },
       child: Container(
         decoration: BoxDecoration(
-            color: getBgColor(text),
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.green.withOpacity(0.1),
-                blurRadius: 1,
-                spreadRadius: 1,
-              ),
-            ]),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+        ),
         child: Center(
           child: Text(
             text,
